@@ -14,21 +14,19 @@ from flask import Flask, jsonify, render_template
 
 #local mongo install
 
-# mongodb+srv://KUMAR:<password>@cluster0.cep5x.mongodb.net/test
+
 
 #cloud mongo connect
-#cloudMClnt=MongoClient()
-##cloudMClnt=MongoClient("mongodb+srv://"+ cloudM + ":" + cloudMpassword + "@cluster0.cep5x.mongodb.net/test?retryWrites=true&w=majority")
-
-
-#for local MOngo DB
-cloudMClnt = MongoClient('localhost', 27017)
+cloudMClnt=MongoClient()
+##cloudMClnt=MongoClient('mongodb+srv://"+cloudM + ":" + cloudMpassword + "@cluster0.cep5x.mongodb.net/test?ssl=true&ssl_cert_reqs=CERT_NONE')
+cloudMClnt=MongoClient("mongodb+srv://"+cloudM + ":" + cloudMpassword + "@cluster0.cep5x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+#print(cloudM)
+#print(cloudMpassword)
+#print(cloudMClnt)
+##mongodb+srv://KUMAR:<password>@cluster0.cep5x.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 
 from sqlalchemy import create_engine, MetaData, Table, select
-
-
-
 
 
 
