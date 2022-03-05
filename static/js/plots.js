@@ -1,9 +1,9 @@
 
-urlstring='https://uk-alternate-energy.herokuapp.com/readData'
-//urlstring='http://127.0.0.1:5000/readData'
+//urlstring='https://uttamku.energy.herokuapp.com/readData'
+urlstring='http://127.0.0.1:5000/readData'
 
 Plotly.d3.json(urlstring, function(err, rows){
-  console.log(rows)
+  console.log("java Layer " + rows)
   function unpack(rows, key) {
     
   return rows.map(function(row) { return row[key]; });
@@ -17,7 +17,7 @@ var country1 = unpack(rows, 'country')
 console.log(country1)
 var values = unpack(rows, 'TWh_Unit')
 console.log(values)
-
+console.log("uttam")
 //var data = [
 //  {
 //    type: "sunburst",

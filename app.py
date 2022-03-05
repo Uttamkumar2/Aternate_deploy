@@ -1,6 +1,6 @@
 from flask import Flask,render_template,jsonify,request
 import json
-from flask_cors import CORS
+#from flask_cors import CORS
 
 from pymongo import MongoClient 
 from connections import cloudM_R
@@ -11,7 +11,7 @@ port = int(os.environ.get('PORT', 5000))
 
 
 app=Flask(__name__)
-CORS(app)
+#CORS(app)
 
 
 @app.route("/")
