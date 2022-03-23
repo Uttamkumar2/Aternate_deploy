@@ -2,6 +2,9 @@ from flask import Flask,render_template,jsonify,request
 import json
 #from flask_cors import CORS
 
+#import os 
+#from flask import send_from_directory     
+
 from pymongo import MongoClient 
 from connections import cloudM_R
 import os 
@@ -23,9 +26,13 @@ def home():
 @app.route("/readData")
 def read():
         altdatadf = cloudM_R()
-        resdf=altdatadf[(altdatadf["Year"]==2019)]
+        #resdf=altdatadf[(altdatadf["Year"]==2019)]
+        resdf=altdatadf
         return jsonify(resdf.to_dict('records'))
 
+#@app.route('/favicon') 
+#def favicon(): 
+#    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/favicon.ico')
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

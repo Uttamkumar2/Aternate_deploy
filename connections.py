@@ -32,10 +32,10 @@ from sqlalchemy import create_engine, MetaData, Table, select
 
 # read cloud Mongo Data and return dataframes
 def cloudM_R():
-  db=cloudMClnt['Analytics']
-  coldata=db['alternative']
+  db=cloudMClnt['CRYPTO']
+  coldata=db['CRYPTO_DATA_FEED']
     
-  Adatadf = pd.DataFrame(list(coldata.find().sort([('ID', 1)])))
+  Adatadf = pd.DataFrame(list(coldata.find().sort([('Timestamp', 1)])))
   del Adatadf['_id']
   return Adatadf
 

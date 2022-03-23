@@ -1,2 +1,2 @@
-cloudM = "apple"
-cloudMpassword = "test123"
+cloudM = "group3"
+cloudMpassword = "1goodday"
